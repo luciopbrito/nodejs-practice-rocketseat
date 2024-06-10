@@ -2,26 +2,26 @@ POST http://localhost:2121/videos
 Content-Type: application/json
 
 {
-  "title": "Video node1",
-  "description": "Esse é o video 01",
+  "title": "Video 03",
+  "description": "Esse é o video 03",
   "duration": 180
 }
 
 ###
 
-GET http://localhost:2121/videos
+GET http://localhost:2121/videos?search=video
 
 ###
 
-PUT http://localhost:2121/videos/9ff1e3c1-c512-4ef3-867b-b586d8e4e9f9
+PUT http://localhost:2121/videos/45dc7ce5-e7ce-493b-9cb8-dc1b1c64d060
 Content-Type: application/json
 
 {
-  "title": "Video 02",
-  "description": "Esse é o video 01",
-  "duration": 180
+  "title": "Video 022",
+  "description": "Esse é o video 022",
+  "duration": 190
 }
 
 ###
 
-DELETE http://localhost:2121/videos/9ff1e3c1-c512-4ef3-867b-b586d8e4e9f9
+DELETE http://localhost:2121/videos/e35cbbde-7d62-42d6-aac4-befbfa7a5373
