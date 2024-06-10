@@ -1,33 +1,50 @@
-// import { createServer } from 'node:http'
-
-// const server = createServer((request, response) => {
-//   response.write('oi')
-
-//   return response.end();
-// })
-
-// server.listen(2121);
-
-import { fastify } from 'fastify'
+import { fastify } from 'fastify';
+import { DatabaseMemory } from './database-memory.js';
 
 const server = fastify();
 
-server.post('/videos', () => {
-  return 'rota principal';
+const database = new DatabaseMemory();
+
+server.post('/videos', (request, reply) => {
+  const {title, description, duration } = request.body;
+
+  database.create({
+    // sort answers - when the name is equal of propery can use in this way.
+    title,
+    description,
+    duration,
+  })
+
+  return reply.status(201).send();
 })
 
-server.get('/videos', () => {
-  return 'hello world';
+server.get('/videos', (request) => {
+  const search = request.query.search;
+
+  const videos = database.list(search);
+
+  return videos;
 })
 
-// Route Parameter
+server.put('/videos/:id', (request, reply) => {
+  const videoId = request.params.id;
+  const {title, description, duration } = request.body;
 
-server.put('/videos/:id', () => {
-  return 'hello rocket';
+  const video = database.update(videoId, {
+    title,
+    description,
+    duration,
+  })
+
+  return reply.status(204).send();
 })
 
-server.delete('/videos/:id', () => {
-  return 'hello rocket';
+server.delete('/videos/:id', (request, reply) => {
+  const id = request.params.id;
+
+  database.delete(id);
+
+  return reply.status(204).send();
 })
 
 server.listen({

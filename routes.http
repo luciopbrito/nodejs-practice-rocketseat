@@ -1,0 +1,27 @@
+POST http://localhost:2121/videos
+Content-Type: application/json
+
+{
+  "title": "Video node1",
+  "description": "Esse é o video 01",
+  "duration": 180
+}
+
+###
+
+GET http://localhost:2121/videos
+
+###
+
+PUT http://localhost:2121/videos/9ff1e3c1-c512-4ef3-867b-b586d8e4e9f9
+Content-Type: application/json
+
+{
+  "title": "Video 02",
+  "description": "Esse é o video 01",
+  "duration": 180
+}
+
+###
+
+DELETE http://localhost:2121/videos/9ff1e3c1-c512-4ef3-867b-b586d8e4e9f9
