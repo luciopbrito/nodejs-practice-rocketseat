@@ -1,27 +1,27 @@
-POST http://localhost:2121/videos
+POST https://nodejs-practice-rocketseat.onrender.com/videos
 Content-Type: application/json
 
 {
-  "title": "Video 03",
-  "description": "Esse é o video 03",
+  "title": "Video 04",
+  "description": "Esse é o video 04",
   "duration": 180
 }
 
 ###
 
-GET http://localhost:2121/videos?search=video
+GET https://nodejs-practice-rocketseat.onrender.com/videos?search=video
 
 ###
 
-PUT http://localhost:2121/videos/45dc7ce5-e7ce-493b-9cb8-dc1b1c64d060
+PUT https://nodejs-practice-rocketseat.onrender.com/videos/45dc7ce5-e7ce-493b-9cb8-dc1b1c64d060
 Content-Type: application/json
 
 {
-  "title": "Video 022",
-  "description": "Esse é o video 022",
+  "title": "Video 02",
+  "description": "Esse é o video 02",
   "duration": 190
 }
 
 ###
 
-DELETE http://localhost:2121/videos/e35cbbde-7d62-42d6-aac4-befbfa7a5373
+DELETE https://nodejs-practice-rocketseat.onrender.com/videos/45dc7ce5-e7ce-493b-9cb8-dc1b1c64d060
