@@ -12,13 +12,21 @@ import { fastify } from 'fastify'
 
 const server = fastify();
 
-server.get('/', () => {
+server.post('/videos', () => {
   return 'rota principal';
 })
-server.get('/hello', () => {
+
+server.get('/videos', () => {
   return 'hello world';
 })
-server.get('/rocketseat', () => {
+
+// Route Parameter
+
+server.put('/videos/:id', () => {
+  return 'hello rocket';
+})
+
+server.delete('/videos/:id', () => {
   return 'hello rocket';
 })
 
